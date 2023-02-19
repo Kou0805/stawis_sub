@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>stawis</h1>
+  <a href="/signup" role="button">register</a>
+  <a href="/login" role="button">login</a>
+  <a href="/logout" role="button">ログアウト</a>
+  {% for stawis in stawises %}
+  <article>
+    <h2>{{ stawis.title }}</h2>
+    <a href="/update/{{stawis.id}}" role="button">編集</a>
+    <a href="/delete/{{stawis.id}}" role="button">削除</a>
+    <p>{{ stawis.body }}</p>
+    <p>作成日時:{{ stawis.date }}</p>
+  </article>
+  {% endfor %}
+{% endblock %}
